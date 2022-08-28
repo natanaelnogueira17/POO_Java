@@ -1,38 +1,43 @@
-package Aulas;
+package Aula4;
 
 public class Caneta {
-
-	public String modelo;
-	public String cor;
-	protected float ponta;
-	protected int carga;
-	protected boolean tampada;
+	private String modelo;
+	private float ponta;
+	private String cor;
+	private boolean tampada;
 	
-	void status() {
-		System.out.println("uma caneta " + this.cor);
-		System.out.println("Esta tampada? " + this.tampada);
-		System.out.println("Modelo: " + this.modelo);
-		System.out.println("Ponta: " + this.ponta);
-		System.out.println("Carga: " + this.carga);
+	public Caneta() {  //metodo construtor recebe o nome da classe, somente
+		this.tampar();
+		this.cor = "AZUL";
+	}
+	public void getModelo() {
+		return this.modelo;
 	}
 	
-	public void rabiscar() {
-		if(this.tampada==true) {
-			System.out.println("Nao posso Rabiscar!!!");
-		}else {
-			System.out.println(" Rabiscando _____------_______-----!");
-		}
+	public void setModelo(String m) {
+		this.modelo = m;
+	}
+	public float getPonta() {
+		return this.ponta;
 		
 	}
-	
-	protected void tampar (){
-		this.tampada = true;
-		
-		
+	public void setPonta(float p) {
+		this.ponta = p;
 	}
-	
-	protected void destampar() {
+	public void tampar() {
 		this.tampada = false;
 	}
-
+	public void destampar() {
+		this.tampada = false;
+	}
+	
+	public void status () {
+		System.out.println("Sobre a caneta: ");
+		System.out.println("Modelo: "+ this.modelo);
+		System.out.println("Ponta: " + this.ponta);
+		System.out.println("Cor: " + this.cor);
+		System.out.println("Tampada "+ this.tampada);
+		
+		
+	}
 }
